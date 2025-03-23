@@ -1,0 +1,117 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+body{
+    background-color: rgba(229, 229, 229, 1);
+    margin: 0;
+    padding: 0;
+
+}
+nav{
+    position: sticky;
+    display: flex;
+    height: 102px;
+    width: 99.29%;
+    background-color: rgb(26 181 171);
+    padding: 5px;
+
+    img{
+        height: 100px;
+        width: 150px;
+        padding: 0px 32px;
+
+    }
+}
+
+.opt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; 
+  }
+  
+  .opt span {
+    list-style-type: none;
+    display: flex;
+    gap: 50px;
+    padding-left: 945px; 
+    margin: 0; 
+    justify-content: center; 
+    align-items: center;
+    
+  }
+.opt span a{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 1);
+    font-size: 23px;    
+}
+.info{
+   
+    background-color: rgb(16 34 33);
+    height: 487px;
+    width: 50%;
+    h1{
+        color: #63f1af;
+        margin: 50px 0px;
+        padding-left: 250PX;
+    
+    };
+    h2{
+        margin: 30px;
+        color:rgb(198 227 212) ;
+        width: 80%;
+        padding-left: 38px;
+        ol{
+            padding-left: 167px;
+        }
+       
+        
+    }
+}
+.motive{
+    
+        background-color: rgba(85, 75, 68, 0.2667);
+        height: 487px;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .motive_box{
+            background-color: #dfff229e;
+            height: 85%;
+            width: 65%;
+            box-shadow: 0 0 50px 50px rgba(20, 20, 20, 0.1);
+            border-radius: 40px;
+
+            .welcome{
+                font-family: "Lilita One", sans-serif;
+                font-weight: 400;
+                font-style: normal;
+                padding-left: 66px;
+                font-size: xx-large;
+                color: #fb0808;;
+            }
+            .motive_box2{
+                margin-top: 39px;
+            }
+            button{
+                font-size: x-large;
+                font-family: "Luckiest Guy", cursive;
+                font-weight: 400;
+                font-style: normal;
+                color: #003483;
+                margin-bottom: 57px;
+                height: 55px;
+                width: 100%;
+                border: none;
+                
+                background-color: inherit;
+            }
+            .btn{
+               margin-top: 38px;
+            }
+        }
+}
+main{
+    display: flex;
+}

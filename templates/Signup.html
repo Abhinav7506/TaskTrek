@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+</head>
+<script src="/static/Signup.js"></script>
+
+<link rel="stylesheet" href="/static/Signup.css">
+<body>
+    <nav>
+        <img src="/static/images/Logo.png" alt="logo">
+        <div class="opt">
+            <ul>
+                <li><a href="">HOME</a></li>
+                <li><a href="">TO-DO-LIST</a></li>
+                <li><a href="">NOTES</a></li>
+                <li><a href="">DIARY</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="signup">
+        <div class="login1">SIGN UP </div>
+        <div class="form">
+        <form method="post" onsubmit="signup(event)">
+            <div class="input-box">
+            <label>Email</label>
+            <input type="text" name="email" id="email" required>
+            </div>
+            <div class="input-box">
+            <label>Username</label>
+            <input type="text" name="username" id="username" required>
+            </div>
+            <div class="input-box ">
+                <label>Password</label>
+                <input type="password" name="password" id="password" required>
+            </div>
+            <div class="btn-container">
+                <button type="submit">Sign Up </button>
+        </form>
+    </div>
+    </div>
+</body>
+</html>
