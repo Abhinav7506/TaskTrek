@@ -85,37 +85,62 @@ def login():
         cursor.close()
         con.close()
 
-@app.route('/api/todo', methods=['POST'])
-def todo_api():
+# @app.route('/api/todo', methods=['POST'])
+# def todo_api():
+#     try:
+#         data = request.json  # ✅ Fetch JSON data
+
+#         tasks = data.get('tasks', [])  # ✅ Extract multiple tasks (list of dicts)
+
+#         if not tasks:
+#             return jsonify({'error': 'No tasks received!'}), 400
+
+#         con = get_db()
+#         cursor = con.cursor()
+
+#         query = "INSERT INTO todo (task, status) VALUES (%s, %s)"
+
+#         for task_data in tasks:
+#             task = task_data.get('task', '').strip()
+#             status = 1 if task_data.get('status', False) else 0  # ✅ Convert Boolean to MySQL format
+
+#             if task:  # ✅ Prevent empty tasks from being saved
+#                 cursor.execute(query, (task, status))
+
+#         con.commit()
+
+#         return jsonify({'message': 'Tasks added successfully!'})
+
+#     except Exception as e:
+#         print("Error:", str(e))
+#         return jsonify({'error': 'Database error'}), 500
+
+#     finally:
+#         cursor.close()
+#         con.close()
+
+
+
+
+@app.route('/api/notes',methods=['POST'])
+def notes_api():
     try:
-        data = request.json  # ✅ Fetch JSON data
-
-        tasks = data.get('tasks', [])  # ✅ Extract multiple tasks (list of dicts)
-
-        if not tasks:
-            return jsonify({'error': 'No tasks received!'}), 400
-
-        con = get_db()
-        cursor = con.cursor()
-
-        query = "INSERT INTO todo (task, status) VALUES (%s, %s)"
-
-        for task_data in tasks:
-            task = task_data.get('task', '').strip()
-            status = 1 if task_data.get('status', False) else 0  # ✅ Convert Boolean to MySQL format
-
-            if task:  # ✅ Prevent empty tasks from being saved
-                cursor.execute(query, (task, status))
-
+        data=request.json
+        print("Recieved data:",data)
+        if 'note' not in data:
+            return jsonify({'error':'Invalid input data!'}),400
+        con=get_db()
+        cursor=con.cursor()
+        query="insert into notes (note) values(%s)"
+        values=(data['note'],)
+        cursor.execute(query,values)
         con.commit()
-
-        return jsonify({'message': 'Tasks added successfully!'})
-
+        print("Data inserted successfully")
+        return jsonify({'message':'Note saved successfully!','redirect':'/notes'})
     except Exception as e:
-        print("Error:", str(e))
-        return jsonify({'error': 'Database error'}), 500
-
-    finally:
+        print('Error:',str(e))
+        return jsonify({'error':'Database error!!'}),500
+    finally:    
         cursor.close()
         con.close()
 

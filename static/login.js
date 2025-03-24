@@ -13,10 +13,10 @@ function login(event){
             password:Password
         })
     })
-    .then(response => response.json()
+    .then(response => response.json())
     .then(data => {
         if (data.redirect){
             window.location.href=data.redirect;
         }
-    }))
+    })
 }

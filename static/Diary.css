@@ -108,6 +108,10 @@ main {
 .diary-entry h2 {
     color: #333;
 }
+.diary-entry h2:hover{
+    color: #3b64a3;
+    cursor: pointer;
+}
 
 .diary-entry p {
     font-size: 14px;
